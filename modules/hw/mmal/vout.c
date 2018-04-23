@@ -259,7 +259,7 @@ static int Open(vlc_object_t *object)
     vout_display_PlacePicture(&place, &vd->source, vd->cfg, false);
     display_region.hdr.id = MMAL_PARAMETER_DISPLAYREGION;
     display_region.hdr.size = sizeof(MMAL_DISPLAYREGION_T);
-    display_region.fullscreen = MMAL_FALSE;
+    display_region.fullscreen = MMAL_TRUE;
     display_region.src_rect.x = vd->fmt.i_x_offset;
     display_region.src_rect.y = vd->fmt.i_y_offset;
     display_region.src_rect.width = vd->fmt.i_visible_width;
@@ -416,7 +416,7 @@ static int configure_display(vout_display_t *vd, const vout_display_cfg_t *cfg,
 
     display_region.hdr.id = MMAL_PARAMETER_DISPLAYREGION;
     display_region.hdr.size = sizeof(MMAL_DISPLAYREGION_T);
-    display_region.fullscreen = MMAL_FALSE;
+    display_region.fullscreen = MMAL_TRUE;
     display_region.src_rect.x = fmt->i_x_offset;
     display_region.src_rect.y = fmt->i_y_offset;
     display_region.src_rect.width = fmt->i_visible_width;
